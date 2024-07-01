@@ -1,0 +1,878 @@
+/* import font  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* end import  */
+
+
+
+
+.vujahday-script-regular {
+    font-family: "Vujahday Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  *{
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(205,31,64);
+    background: linear-gradient(142deg, rgba(205,31,64,1) 29%, rgba(255,70,105,1) 48%, rgba(175,13,43,1) 74%);
+    background-repeat: no-repeat;}
+
+.container {
+    width: 100%;
+    height: auto;
+    justify-content:center;
+    overflow-x: hidden;
+    display: flex;
+}
+.container_center{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+.box_header{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(205,31,64);
+    position: relative;
+}
+.box_header::before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    background:rgb(255, 255, 255);
+    position:absolute;
+    bottom: 3%;
+    left: 50%;
+    transform:rotate(45deg) translateX(-50%);
+    animation: Hide_visibility 1s ease-in-out infinite;
+    z-index:1;
+}
+@keyframes Hide_visibility {
+    0%{opacity: 0;}
+    100%{opacity: 100%;}
+}
+.box_header::after{
+    content: "";
+    width: 30px;
+    height: 50px;
+    background: rgb(205,31,64);
+    position:absolute;
+    bottom: 3%;
+    left: 50%;
+    transform:rotate(90deg) translate(-43%,17%);
+    z-index:1;
+
+}
+.box_content{
+    font-size: 120px;
+    font-family: "Vujahday Script", cursive;
+    color: white;
+    text-align: center;
+}
+.box_header01{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 0px 20px;
+    padding-bottom: 70px;
+}
+.box_header01 a{
+    width: 30%;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: rgb(255, 219, 219);
+
+}
+.box_header01 a span{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    display:inline-block;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+.box_header01 a img{
+    width: 100%;
+    box-shadow: 10px 5px 10px ;
+    border:3px solid white;
+    z-index: 2;
+}
+
+
+
+
+
+/* phan header logo va text  */
+.header-lp{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0px 20px ;
+}
+    .logo-header{
+        height: 100%;
+    }
+    .logo-header img{
+        height: 100%;
+    }
+    .text-header{
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(255 255 255);
+    }
+
+/* ket thuc phan header logo va text  */
+
+
+.lixi.fit.fix{
+    background: rgb(205,31,64);
+    background: linear-gradient(142deg, rgba(205,31,64,1) 29%, rgba(255,70,105,1) 48%, rgba(175,13,43,1) 74%);
+    background-repeat: no-repeat;}
+
+    .lixi.fit.fix a{
+        color: rgb(205,31,64);
+    }
+
+    .lixi.fit.fix .lixi-cta{
+        background-color: white;
+    }
+    .lixi.fit.fix h2{
+        color: white;
+    }
+/* /// old  */
+
+
+
+
+
+/* background ca su kien  */
+
+/* end background ca su kien  */
+/* ------------------------------------------------------------------------------------- */
+
+.event-other{
+    width: 200px;
+    height: 100px;
+    position:fixed;
+    right: 30px;
+    bottom: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:center;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #cd1f40;
+    border: 2px solid #cd1f40;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.334);
+    animation: topb 2s ease-in-out infinite;
+    z-index: 9999;
+}
+@keyframes topb {
+    0%{transform: translateY(-10%);}
+    50%{transform: translateY(0%);}
+    100%{transform: translateY(-10%);}
+}
+
+
+
+
+
+
+
+
+/* style Css desktop  */
+.landing-page-sk{
+    width: 1200px;
+    margin:auto;
+}
+.fit{
+    width: 100%;
+}
+.b45{
+    width: 45%;
+}
+.tieude{
+    font-size: 25px;
+    color: #cd1f40;
+    font-weight: 900;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.ctaHead{
+    background-color: rgb(200, 200, 200)!important;
+color: black!important;
+}
+.tieude2{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 00px;
+}
+.tieude2 i{
+    padding-right: 10px;
+}
+.contentlp{
+    /* text-align: left; */
+    font-size: 20px;
+    padding: 10px 0px;
+    line-height: 30px;
+}
+.linewhite{
+    width: 100%;
+    height: 2px;
+    background-color:rgba(75, 4, 4, 0.555);
+    margin: 20px 0px;
+}
+/* -------------------------------------------------------------------------------- */
+
+/* phan header logo va text  */
+.header-lp{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0px 20px ;
+}
+    .logo-header{
+        height: 100%;
+    }
+    .logo-header img{
+        height: 100%;
+    }
+    .text-header{
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(255 255 255);
+    }
+
+/* ket thuc phan header logo va text  */
+/* ------------------------------------------------------------------------------------------ */
+
+/* phan kv banner  */
+    .image-kv{
+        width: 100%;
+    }
+    .image-kv img{
+        width: 100%;
+    }
+/*ket thuc  phan kv banner  */
+
+
+/* phan li xi  */
+.lixi{
+    display: flex;
+    justify-content:space-around;
+    padding: 20px 0px;
+    background: white;
+    align-items: center;
+}
+.lixi-text{
+    text-align: center;
+}
+.lixi-text h2{
+    text-transform: uppercase;
+}
+.lixi-cta{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 30px;
+    background-color:#cd1f40;
+    border-radius: 20px;
+    text-decoration: none;
+    margin: 20px 0px;
+    display:inline-block;
+    animation: scale 1.5s ease-out infinite;
+}
+/* @keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+} */
+
+.b45 img{
+    width: 100%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.301);
+}
+
+
+
+/* ket thuc li xi  */
+/* ---------------------------------------------- */
+
+/* PHAN SU KIEN  */
+.sukien{
+    color: white;
+    background-color:#cd1f40;
+}
+.sukien.tieude{
+    text-align: center;
+    padding: 20px 0px ;
+    display: block;
+    background-color:#bb0d2d;
+}
+.cuahang{
+    display:flex;
+    justify-content: space-between;
+    padding:10px 20px;
+}
+
+.anhCH{
+    width: 30%;
+}
+.anhCH img{width: 100%;
+    border: 2px solid white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.301);
+}
+
+li{
+    font-weight: 600;
+    padding :5px 0px;
+}
+.diadiem{
+    width: 30%;
+}
+.subli{
+    padding: 5px 0px ;
+    font-weight: 400;
+}
+
+/* phan card */
+.carousel-sukien{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.carousel-image{
+    width: 45%;
+    position: relative;
+    overflow:hidden;
+}
+.carousel-image img{
+    width: 100%;
+    position: absolute;
+    border: 2px solid white;
+    display: none;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.363);
+}
+.carousel-image img.active{
+    display: block;
+    animation: imgchuyen 0.5s ease-in-out forwards;
+}
+@keyframes imgchuyen {
+    0%{
+        transform:translateX(10%);
+        opacity:0
+    }
+    100%{
+        transform:translateX(0%);
+        opacity:1
+    }
+}
+
+
+.content-ct{
+    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+.text-ct{
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+    border:2px solid white;
+    cursor: pointer;
+    transition:0.5s;
+    color: white;
+}
+.text-ct.active{
+    transform:translateX(5%);
+    background-color: white;
+    color: #cd1f40;
+    font-weight: bold;
+}
+.text-ct i{
+    padding-right: 20px;
+    animation: nhapnhay 1s ease-in-out infinite;
+}
+@keyframes nhapnhay {
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
+.text-ct:hover{
+    transform: translateX(5%);
+}
+
+
+/* KET THUC PHAN SU KIEN  */
+
+/* -------------------------------------------------------------- */
+/* phan link Slide  */
+.linkSlide{
+    background-color: white;
+    width: 100%;
+    padding-bottom: 40px;
+   
+}
+.linkSlide .tieude{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+}
+.slide_img{
+    margin: auto;
+    width: 95%;
+    /* overflow: hidden; */
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    
+}
+.one_img{
+    text-align: center;
+    width: 30%;
+    background-color: white;
+    border:2px solid #cd1f40;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+    transform: scale(0.95);
+}
+.one_img:hover{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
+    transform: scale(1);
+}
+.one_img img{
+    width: 100%;
+}
+.one_img a{
+    padding: 5px 20px;
+    background-color: #cd1f40;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+
+/*end phan link Slide  */
+
+/* slide chay logo */
+
+:root {
+    --marquee-width: 100%;
+    --marquee-height: 60px;
+    /* --marquee-elements: 12; */ /* defined with JavaScript */
+    --marquee-elements-displayed: 5;
+    --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+  }
+  
+  .marquee {
+    width: var(--marquee-width);
+    height: var(--marquee-height);
+    background-color: #cd1f40;
+    color: #eee;
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee:before, .marquee:after {
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+  }
+  .marquee:before {
+    left: 0;
+    background: linear-gradient(to right, #9b0f29 0%, transparent 100%);
+  }
+  .marquee:after {
+    right: 0;
+    background: linear-gradient(to left, #9b0f29 0%, transparent 100%);
+  }
+  .marquee-content {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling var(--marquee-animation-duration) linear infinite;
+  }
+  /* .marquee-content:hover {
+    animation-play-state: paused;
+  } */
+  @keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
+  }
+  .marquee-content li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-shrink: 0;
+    width: var(--marquee-element-width);
+    max-height: 100%;
+    font-size: calc(var(--marquee-height)*3/4); /* 5rem; */
+    white-space: nowrap;
+  }
+  .marquee-content li a{
+    color: white;
+  }
+  .marquee-content li img {
+    width: 100%;
+    /* height: 100%; */
+  }
+  
+  @media (max-width: 600px) {
+    html { font-size: 12px; }
+    :root {
+      --marquee-width: 100vw;
+      --marquee-height: 16vh;
+      --marquee-elements-displayed: 3;
+    }
+    .marquee:before, .marquee:after { width: 5rem; }
+  }
+
+/* end slide chay logo */
+
+
+
+/* phan form dawng ky  */
+.form-dk-lp{
+    width:100%;
+    background: white;
+}
+.content{
+    width: 50%;
+    margin: auto;
+}
+label{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    display: inline-block;
+    font-weight: 600;
+}
+#test-form{
+
+}
+.f{
+    width: 100%;
+}
+input{
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 0px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.full{
+    width: 100%;
+}
+.chia2{
+    width: 100%;
+    display: flex;
+
+}
+.radio label{
+    float:left;
+}
+input[type="radio"]{
+    width: 10%;
+    padding: 0;
+}
+select{
+    width: 100%;
+    font-size: 16px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 6px 20px;
+}
+option{
+    font-size: 16px;
+    padding:5px 20px;
+}
+#time{
+    opacity: 0;
+}
+button{
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    background-color: #c5c5c5;
+    color: rgb(0, 0, 0);
+    padding:10px 20px ;
+    border: 0px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+button:hover{
+    background: #cd1f40;
+    color:white;
+}
+#form_lixi{
+    padding: 20px 0px;
+}
+/*ket thuc phan form dawng ky  */
+#popupDk{
+    width: 400px;
+    height: 200px;
+    background: rgb(205,31,64);
+    background: linear-gradient(114deg, rgba(205,31,64,1) 0%, rgba(254,129,129,1) 44%, rgba(205,31,64,1) 98%);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.551);
+    border-radius: 30px;
+    border: 3px solid rgb(117, 0, 0);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    top:30;
+    flex-direction: column;
+    animation:chuyen 1s ease-in-out forwards;
+    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#popUp.active #popupDk{
+    display: flex !important;
+}
+#tsv{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0px;
+}
+#tsv{
+    color: yellow;
+    font-weight: bold;
+    font-size: 30px;
+}
+#dong{
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    font-size: 20px;
+}
+#dong:hover{
+    transform: scale(1.2);
+}
+.f1{
+    display:flex
+}
+@keyframes chuyen {
+    0%{
+        opacity: 0;
+        top: 10%;
+    }
+    100%{
+        opacity: 1;
+        top: 40%;
+    }
+}
+
+#wait{
+    font-size: 30px;
+    position: absolute;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    background: #fcde42;
+    padding: 30px 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 30px;
+    border: 3px solid black;
+    box-shadow: 10px 5px 10px yellow;
+    transform: translate(-50%, -50%) scale(1);
+    animation: hoatcanh 1s ease-in-out infinite;
+    display: none;
+}
+#wait.active{
+    display: block;
+}
+#popUp{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    z-index: 99999;
+}
+.footer{
+    width: 100%;
+    
+}
+.textf{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    color: #fff;
+    align-items: center;
+}
+@media only screen and (max-width: 1200px) {
+    .landing-page-sk{
+        width: 800px;
+    }
+    .text-ct{
+        font-size: 16px;
+    }
+    .content{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .landing-page-sk{
+        width: 400px;
+    }
+    .text-ct{
+        font-size: 12px;
+    }
+    .content{
+        width: 90%;
+    }
+    .tieude{
+        font-size: 16px;
+    }
+    .tieude2{
+        font-size: 16px;
+    }
+    .cuahang{
+        flex-direction: column;
+    }
+    .anhCH{
+        width: 100%;
+    }
+    .diadiem{
+        width: 90%;
+        margin:auto;
+        padding-bottom: 20px;
+        border-bottom: 1px solid white;
+    }
+    .lixi{
+        flex-direction: column;
+        padding-bottom: 0px;
+    }
+    .b45{
+        width: 100%;
+    }
+    .carousel-sukien{
+        flex-direction: column-reverse;
+    }
+    .carousel-image{
+        width: 300px;
+        height: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .text-ct{
+        margin-bottom: 10px;
+    }
+    .content-ct{
+        margin-top: 10px;
+        padding-bottom:20px;
+    }
+    .lixi-image img{
+        box-shadow: none;
+    }
+    .anhCH img{
+        box-shadow: none;
+    }
+    .one_img{
+        width: 100%;
+    }
+    .slide_img{
+        align-items: center;
+    }
+    .event-other{
+        width: 150px;
+        font-size: 16px;
+        bottom: 0vh;
+    }
+    .textf{
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 500px){
+
+    .marquee-content li{
+        font-size: calc(var(--marquee-height)*3/11);
+    }
+    .one_img a{
+        font-size: 16px;
+    }
+
+    .sukien .cuahang2{
+    width: 45%!important;
+    }
+    .cuahang2 .text{
+        font-size: 14px!important;
+    }
+}
+
+/* //fix 06032024  */
+.header-lp{
+    background-color: #cd1f40;
+}
+.sukien2 .tieude{
+    width: 100%;
+}
+.sukien2{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.sukien .cuahang2{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    margin:5px ;
+   
+}
+.sukien .cuahang2 img{
+    width: 100%;
+}
+.cuahang2 .text{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
