@@ -1,5 +1,5 @@
 
-const nut = document.getElementById('submit-form');
+        const nut = document.getElementById('submit-form');
         const wait = document.getElementById('wait');
         const popUp = document.getElementById('popUp');
         const textSv = document.getElementById('tsv');
@@ -7,14 +7,22 @@ const nut = document.getElementById('submit-form');
         const popupDk = document.getElementById('popupDk');
         const  time = document.getElementById('time');
         const d = new Date();
-        const e = d.getHours() + ":" + d.getMinutes();
-        // dong.addEventListener('click',()=>{
-        //     popUp.classList.remove('active');
-        //     textSv.innerText = '';
-        // })
-        // nut.addEventListener('click',()=>{
-        //     wait.classList.add('active');
-        // })
+        const m = d.getMonth() + 1;
+        const e = d.getHours() + ":" + d.getMinutes() + "||" + d.getDay() + "/" + m + "/" + d.getFullYear();
+        time.value = d;
+        // console.log(time.value);
+
+
+
+
+
+        dong.addEventListener('click',()=>{
+            popUp.classList.remove('active');
+            textSv.innerText = '';
+        })
+        nut.addEventListener('click',()=>{
+            wait.classList.add('active');
+        })
         
         $(document).ready(function()
         {
@@ -24,7 +32,7 @@ const nut = document.getElementById('submit-form');
         var data = $('form#test-form').serialize();
         $.ajax({
         type : 'GET',
-        url : 'https://script.google.com/macros/s/AKfycbxq5ioZLBj8J3VcAoTEaFLsmtOaRaq64d4xj2q4uzmXVMjBi_R20mCz7A8pBt_TB-LIgQ/exec',
+        url : 'https://script.google.com/macros/s/AKfycbzScpOAOl_4Htqy85xsW8YFrcXIzVw_Qs1ORbUo3WDyNqfWYvUsxnKWq1MqlmIKCBWn/exec',
         dataType:'json',
         crossDomain : true,
         data : data,
