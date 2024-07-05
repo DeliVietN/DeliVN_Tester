@@ -1,22 +1,169 @@
-
-
 /* import font  */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* end import  */
-*{
+
+
+
+
+.vujahday-script-regular {
+    font-family: "Vujahday Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  *{
     font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-/* background ca su kien  */
 body{
+    background-image: url('../images/bg_t78.jpg');
+    background-size: cover;
+    background-position: center center;
+    /* background-repeat: no-repeat; */
+}
+
+.container {
     width: 100%;
+    height: auto;
+    justify-content:center;
     overflow-x: hidden;
+    display: flex;
+}
+.container_center{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(205,31,64);
+    /* background: linear-gradient(142deg, rgba(205,31,64,1) 29%, rgba(255,70,105,1) 48%, rgba(175,13,43,1) 74%);
+    background-repeat: no-repeat; */
+    padding: 0px 10px;
+    /* box-shadow: 0px -7px 84px white; */
+}
+.box_header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgb(205,31,64);
+    position: relative;
+}
+.box_header::before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    background:rgb(255, 255, 255);
+    position:absolute;
+    bottom: 3%;
+    left: 50%;
+    transform:rotate(45deg) translateX(-50%);
+    animation: Hide_visibility 1s ease-in-out infinite;
+    z-index:1;
+}
+@keyframes Hide_visibility {
+    0%{opacity: 0;}
+    100%{opacity: 100%;}
+}
+.box_header::after{
+    content: "";
+    width: 30px;
+    height: 50px;
+    background: rgb(205,31,64);
+    position:absolute;
+    bottom: 3%;
+    left: 50%;
+    transform:rotate(90deg) translate(-43%,17%);
+    z-index:1;
+
+}
+.box_content{
+    font-size: 120px;
+    font-family: "Vujahday Script", cursive;
+    color: white;
+    text-align: center;
+}
+.box_header01{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 0px 20px;
+    padding-bottom: 70px;
+}
+.box_header01 a{
+    width: 30%;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: rgb(255, 219, 219);
+
+}
+.box_header01 a span{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    display:inline-block;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+.box_header01 a img{
+    width: 100%;
+    box-shadow: 10px 5px 10px ;
+    border:3px solid white;
+    z-index: 2;
+}
+
+
+
+
+
+/* phan header logo va text  */
+.header-lp{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0px 20px ;
+}
+    .logo-header{
+        height: 100%;
+    }
+    .logo-header img{
+        height: 100%;
+    }
+    .text-header{
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(255 255 255);
+    }
+
+/* ket thuc phan header logo va text  */
+
+
+.lixi.fit.fix{
     background: rgb(205,31,64);
     background: linear-gradient(142deg, rgba(205,31,64,1) 29%, rgba(255,70,105,1) 48%, rgba(175,13,43,1) 74%);
-    background-repeat: no-repeat;
-}
+    background-repeat: no-repeat;}
+
+    .lixi.fit.fix a{
+        color: rgb(205,31,64);
+    }
+
+    .lixi.fit.fix .lixi-cta{
+        background-color: white;
+    }
+    .lixi.fit.fix h2{
+        color: white;
+    }
+/* /// old  */
+
+
+
+
+
+/* background ca su kien  */
+
 /* end background ca su kien  */
 /* ------------------------------------------------------------------------------------- */
 
@@ -46,6 +193,8 @@ body{
     50%{transform: translateY(0%);}
     100%{transform: translateY(-10%);}
 }
+
+
 
 
 
@@ -150,13 +299,13 @@ color: black!important;
     font-size: 16px;
     font-weight: bold;
     color: white;
-    padding:6px 20px;
-    background-color:#cd1f40 ;
+    padding: 10px 30px;
+    background-color:#cd1f40;
     border-radius: 20px;
     text-decoration: none;
     margin: 20px 0px;
     display:inline-block;
-    animation: scale 1.5s ease-out infinite ;
+    animation: scale 1.5s ease-out infinite;
 }
 /* @keyframes scale {
     0%{
@@ -224,7 +373,7 @@ li{
     padding: 10px 20px;
 }
 .carousel-image{
-    width: 45%;
+    width: 42%;
     position: relative;
     overflow:hidden;
 }
@@ -266,6 +415,7 @@ li{
     border:2px solid white;
     cursor: pointer;
     transition:0.5s;
+    color: white;
 }
 .text-ct.active{
     transform:translateX(5%);
@@ -413,12 +563,37 @@ li{
   }
   
   @media (max-width: 600px) {
-    html { font-size: 12px; }
+    html {font-size: 12px;}
+
+p.contentlp {}
+
+p.contentlp {
+    font-size: 16px;
+}
+
+h2.tieude {}
+
+h2.tieude {
+    font-size: 29px;
+    margin-top: 10px;
+}
+
+.box_header01 a {
+    width: 80%;
+    padding-bottom: 10px;
+}
+
+.box_header01 {
+    flex-direction: column;
+    align-items: center;
+}
     :root {
       --marquee-width: 100vw;
       --marquee-height: 16vh;
       --marquee-elements-displayed: 3;
     }
+
+.container {}
     .marquee:before, .marquee:after { width: 5rem; }
   }
 
@@ -620,6 +795,7 @@ button:hover{
     }
     .text-ct{
         font-size: 12px;
+        text-align: center;
     }
     .content{
         width: 90%;
@@ -645,18 +821,20 @@ button:hover{
     .lixi{
         flex-direction: column;
         padding-bottom: 0px;
+        align-items: center;
     }
     .b45{
-        width: 100%;
+        width: 80%;
     }
     .carousel-sukien{
         flex-direction: column-reverse;
+        align-items: center;
     }
     .carousel-image{
-        width: 300px;
-        height: 300px;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 400px;
+        height: 400px;
+        left: 0;
+        transform: translateX(-0%);
     }
     .text-ct{
         margin-bottom: 10px;
@@ -667,6 +845,7 @@ button:hover{
     }
     .lixi-image img{
         box-shadow: none;
+        width: 100%;
     }
     .anhCH img{
         box-shadow: none;
@@ -686,10 +865,10 @@ button:hover{
         justify-content: center;
     }
 }
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 600px){
 
     .marquee-content li{
-        font-size: calc(var(--marquee-height)*3/11);
+        font-size: calc(var(--marquee-height)*3/8);
     }
     .one_img a{
         font-size: 16px;
@@ -700,6 +879,16 @@ button:hover{
     }
     .cuahang2 .text{
         font-size: 14px!important;
+    }
+
+    .box_header::before{
+        bottom:1%;
+    }
+    .box_header::after{
+        bottom:1%;
+    }
+    .box_content{
+        font-size: 90px;
     }
 }
 
