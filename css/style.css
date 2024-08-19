@@ -1,0 +1,351 @@
+/* //font  */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Vujahday+Script&display=swap');
+
+.bungee-tint-regular {
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+  .roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+
+
+
+
+/* end/font  */
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #8e002b;
+    width: 100%;
+    height: 100%;
+}
+.root{
+    width: 400px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    margin: auto;
+    background: #ca003d;
+}
+.container{
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin: auto;
+}
+.header{
+    width: 100%;
+}
+.header .tieude{
+    text-align: center;
+    font-size: 30px;
+    font-family: "Bungee Tint", sans-serif;
+    background-color: rgb(255, 255, 255);
+    padding:10px 10px;
+    box-shadow:0px 10px 10px rgba(0, 0, 0, 0.434);
+    animation:dichuyen 2s ease-in-out infinite;
+    transition: 0.5s;
+}
+@keyframes dichuyen {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.header .text-content{
+    margin: 40px 10px 0px 10px;
+    padding: 0px 10px;
+    
+}
+p{
+    position: relative;
+}
+p::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    left: -15px;
+    background-color: white;
+    transform: translateX(-10px);
+    animation:dichuyen 2s ease-in-out 1s infinite;
+}
+b{
+    line-height: 25px;
+}
+.flex-content{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: column;
+}
+.left{
+    width: 100%;
+    text-align: center;
+}
+.right{
+    width: 100%;
+    text-align: center;
+}
+.nutDK{
+    padding: 20px 10px;
+    margin: 0px 10px;
+    font-family: "Bungee Tint", sans-serif;
+    background-color: white;
+    font-size: 16px;
+    animation:dichuyen 2s ease-in-out 1s infinite;
+    cursor:pointer;
+    transition: 0.5s;
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.nutDK:hover{
+    background-color:yellow;
+    box-shadow: 10px 10px 10px black;
+}
+
+/* //body_content  */
+
+.body-content{
+    background: white;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    padding-top: 20px
+}
+.box-binhchon{
+    width: 100%;
+    height: 600px!important;
+    overflow: scroll;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.binhchon{
+    width: 90%;
+    /* margin: auto; */
+    position: relative;
+}
+.binhchon .img{
+    width: 100%;
+}
+img{
+    width: 100%;
+}
+.text-binhchon{
+    font-family: "Bungee Tint", sans-serif;
+    position: absolute;
+    padding: 10px 10px;
+    background: rgba(255, 255, 255, 0.788);
+    border: 3px solid rgb(255, 255, 255);
+    color: #CA003D;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    left: 10px;
+    bottom: 20px;
+    cursor: pointer;
+    font-size: 10px;
+    animation:dichuyen 2s ease-in-out 1s infinite;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.234);
+    transition: 0.5s;
+}
+.text-binhchon:hover{
+    background: rgb(255, 255, 255);
+}
+.form_DK{
+    width: 400px;
+    background-color:white;
+    color: black;
+    padding: 40px 20px;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.455);
+    display: none;
+}
+.form_DK.active{
+    display: block!important;
+}
+.form_DK label{
+    font-family: "Bungee Tint", sans-serif;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-left: 5px;
+}
+.form_DK .inp{
+    margin-top: 10px;
+}
+
+input{
+   width: 100%;
+   outline: none;
+   padding: 5px 10px;
+   border: 1px solid black;
+   border-radius: 20px;
+   margin-top: 5px;
+}
+select{
+    width: 100%;
+   outline: none;
+   padding: 5px 10px;
+   border: 1px solid black;
+   border-radius: 20px;
+   margin-top: 5px;
+}
+.form_DK button{
+    width: 100%;
+    margin-top: 20px;
+    padding:10px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color:#CA003D;
+    color: white;
+    font-weight: bold;
+    animation:dichuyen 3s ease-in-out infinite;
+}
+.title-form{
+    font-family: "Bungee Tint", sans-serif;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.nenden{
+    width: 100vw;
+    height: 100vh;
+    position:fixed;;
+    background-color: rgba(0, 0, 0, 0.752);
+    display: none;
+}
+.nenden.active{
+    display: block!important;
+}
+.cachthuc{
+    background-color: white;
+    color: black;
+    padding:10px 20px;
+    width: 100%;
+    margin-top: 30px;
+}
+.cachthuc h2{
+    margin-top: 20px;
+    font-family: "Bungee Tint", sans-serif;
+}
+
+
+.footer-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
+    font-size: 20px;
+    /* background-color: white; */
+}
+.footer-content div{
+    width: 50%;
+}
+img{
+    width: 100%;
+}
+
+
+
