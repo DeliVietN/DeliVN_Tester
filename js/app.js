@@ -4,11 +4,14 @@ const Name_UV = document.getElementById('name_UV');
 var textt = "hello tesst";
 const nenDen = document.getElementById('nen_den');
 const active_form = document.getElementById('form_dk');
+const max_num = document.getElementById('max_int');
+let int = 0;
 // console.log(convertText);
 // click for voter
 for (let k = 0; k < nutBinhChon.length; k++) {
     console.log(nutBinhChon[k]);
     nutBinhChon[k].addEventListener('click',()=>{
+        int++;
         // lay text
         for (let i = 0; i < text_uv.length; i++) {
             var textUV = text_uv[k].innerText;
@@ -24,9 +27,14 @@ for (let k = 0; k < nutBinhChon.length; k++) {
             active_form.classList.remove('active');
         nenDen.classList.remove('active');
         })
+        console.log(int);
+        if(int>7){
+            max_num.classList.add('active');
+        }
     });
     
 }
+
 
 //lien ket
 const dong = document.getElementById('dong');
