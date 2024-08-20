@@ -27,3 +27,48 @@ for (let k = 0; k < nutBinhChon.length; k++) {
     });
     
 }
+
+//lien ket
+const dong = document.getElementById('dong');
+const textSv = document.getElementById('tsv');
+const wait = document.getElementById('wait');
+const popUp = document.getElementById('popUp');
+const nut = document.getElementById('submit-form');
+
+dong.addEventListener('click',()=>{
+    popUp.classList.remove('active');
+    textSv.innerText = '';
+})
+nut.addEventListener('click',()=>{
+    wait.classList.add('active');
+})
+
+$(document).ready(function()
+{
+var submit = $("button[type='submit']");
+submit.click(function()
+{
+var data = $('form#test-form').serialize();
+$.ajax({
+type : 'GET',
+url : 'https://script.google.com/macros/s/AKfycbyfwCkqk8k7AtP5SGqsl55LPUJJdYS91vTyVvtFG8S88xrY7GDx-Sbp4Ynnuj4iKUD-iQ/exec',
+dataType:'json',
+crossDomain : true,
+data : data,
+success : function(data)
+{
+if(data == 'false')
+{
+    wait.classList.remove('active');
+    textSv.innerText = 'Bạn chưa bình bầu thành công :(';
+    popUp.classList.add('active');
+}else{
+    textSv.innerText = 'Chúc mừng bạn đã bình bầu Thành Công hãy tiếp tục bình bầu BCH khác!';
+    popUp.classList.add('active');
+    wait.classList.remove('active');
+}
+}
+});
+return false;
+});
+});
