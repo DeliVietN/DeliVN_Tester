@@ -3,274 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- font viet tay  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <!-- font main  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- font icon  -->
     
-    <title>Bình Bầu Công Đoàn</title>
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Deli-Sự Kiện Tết</title>
 </head>
 <body>
-    <div class="root">
-        <div class="container">
+    <!-- phao hoa  -->
+    <canvas id="fireworksCanvas"></canvas>
+    <!-- end phao hoa  -->
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup" id="popup">
+        <!-- <div class="img-text" id="text1">Chúc bạn năm mới an khang, thịnh vượng, mọi điều như ý, vạn sự hanh thông</div>
+        <div class="img-text" id="text2">Lê Xuân Hải</div> -->
+        <img id="popupImage" alt="Popup Image">
+        <input id="popup_name" type="text" placeholder="Nhập tên của bạn">
+        <input id="popup_loichuc" type="text" placeholder="Nhập lời chúc của bạn">
+        <button id="createImageButton">Tạo Hình Ảnh</button>
+        <a id="downloadButton" href="#" download="image.png">Tải về</a>
+    </div>
+
+
+
+
+
+    <div class="main-sukienTet" style="background-image:url(./images/back.jpg)">
+        <div class="layout-sk">
             <div class="header">
-                <div class="tieude">
-                    BÌNH BẦU BCH CÔNG ĐOÀN
-                </div>
-                <div class="text-content">
-                    <p>Theo chủ trương từ BGĐ nhằm thực hiện đúng quy định của pháp luật cũng như mong muốn xây dựng 01 tổ chức đại diện cho tập thể người lao động tại Công ty nhằm chăm lo đời sống tinh thần cũng như bảo vệ lợi ích hợp pháp chính đáng của người lao động. </p> <br>
-                    <p>Phòng HCNS đã triển khai thông tin thành lập Công Đoàn cơ sở tại Công ty và nhận được sự đồng ý tham gia của đông đảo CBNV.</p><br>
-                    <p>Từ DS CBNV tham gia công đoàn cơ sở cùng với thông tin CBNV đề cử và ứng cử phòng HCNS tiến hành tổ chức bình bầu ra Ban chấp hành Công đoàn gồm 07 thành viên theo số lượng và chức danh như sau:
-                    </p>
-                    <div class="flex-content">
-                        <div class="left">
-                            <b>01 CHỦ TỊCH CÔNG ĐOÀN</b><br>
-                            <b>01 PHÓ CHỦ TỊCH CÔNG ĐOÀN</b> <br>
-                            <b>03 ỦY VIÊN CÔNG ĐOÀN</b><br>
-                            <b>01 KẾ TOÁN CÔNG ĐOÀN</b><br>
-                            <b>01 THỦ QUỸ CÔNG ĐOÀN</b><br>
-                        </div>
-                        <div class="right">
-                            <a href="#bc01" class="nutDK">
-                                Xem Và Bình Bầu <br> BCH Công Đoàn
-                            </a>
-                        </div>
-                        
+               <div class="menu-sk">
+                    <div class="logo">
+                        <img src="./images/logo_red.svg" alt="">
                     </div>
-                </div>
-            </div>
-            <div class="show-all">
-                <img src="./images/all.jpg" alt="">
-            </div>
-            <div class="cachthuc">
-                <div class="top">
-                    <h2>Cách thức bình bầu: </h2>
-                    <div>Bước 1: Nhập thông tin họ tên, phòng ban</div>
-                    <div>Bước 2: Chọn chức danh mong muốn của Nhân sự có tên Danh sách bình bầu</div>
-                    <div>Bước 3: Hoàn thành việc bình bầu</div>
-                </div>
-               <div class="bottom">
-                <h2>Tổng hợp kết quả bình bầu: </h2>
-                <div>Phòng HCNS tổng hợp kết quả bình bầu và sẽ công khai số lượng bình bầu để thông tin tới CBNV</div>
+                    <ul class="nav">
+                        <li><a class="active" href="#nhannganloichuc">Nhận ngàn câu chúc</a></li>
+                        <li><a href="#taohinhanh">Tạo tấm hình chúc tết với Deli</a></li>
+                        <li><a href="#evenhapdan">Event hấp dẫn</a></li>
+                        <li><a href="#filtercucdinh">Filter cực đỉnh</a></li>
+                        <li><a href="#formdangky">Đăng ký tham gia chương trình</a> </li>
+                    </ul>
                </div>
-                
+               <div class="slides-loichuc" id="nhannganloichuc">
+                <div class="back-img">
+                    <img src="./images/video_back.gif" alt="">
+                </div>
+                <div class="khung-text-banner">
+                    <img src="./images/khung_text.png" alt="">
+                </div>
+                <div class="loi-chuc-tet">
+                    <div class="loi-chuc active">Chúc bạn năm mới an khang, thịnh vượng, mọi điều như ý, vạn sự hanh thông</div>
+                    <div class="loi-chuc">Xuân về tết đến, chúc bạn và gia đình sức khỏe dồi dào, tiền tài phát đạt, sự nghiệp thăng tiến</div>
+                    <div class="loi-chuc">Năm mới, chúc bạn luôn tươi vui, yêu đời, thành công rực rỡ và hạnh phúc ngập tràn</div>
+                    <div class="loi-chuc">Chúc bạn đón Tết vui vẻ, mọi ước mơ đều thành hiện thực, mọi khó khăn đều vượt qua</div>
+                    <div class="loi-chuc">Chúc bạn một năm mới tràn đầy may mắn, hạnh phúc và đạt được tất cả những gì bạn mong muốn</div>
+                    <div class="loi-chuc">Năm mới đến, chúc bạn sức khỏe vững vàng, tình bạn ngày càng gắn bó, tình yêu luôn ngập tràn</div>
+                    <div class="loi-chuc">Chúc bạn năm mới như ý, tài lộc vào nhà, gia đình hòa thuận, công việc thuận buồm xuôi gió</div>
+                    <div class="loi-chuc">Năm mới chúc bạn tràn đầy năng lượng, thực hiện được nhiều dự định và luôn cười thật tươi!</div>
+                    <div class="loi-chuc">Chúc bạn Tết Nguyên Đán an lành, hạnh phúc bên gia đình, bạn bè và một năm thành công đột phá</div>
+                    <div class="loi-chuc">Chúc bạn một mùa xuân ngọt ngào, mọi thứ đều suôn sẻ và luôn gặp được những điều tốt lành!</div>
+                </div>
+
+
+                <div class="cau-chuc-cua">
+                    <div class="cau-chuc active">Lời chúc của: Nguyễn Minh Tú</div>
+                    <div class="cau-chuc">Lời chúc của: Trần Ngọc Lan</div>
+                    <div class="cau-chuc">Lời chúc của: Lê Thảo Vy</div>
+                    <div class="cau-chuc">Lời chúc của: Phạm Hải Yến</div>
+                    <div class="cau-chuc">Lời chúc của: Đặng Thanh Bình</div>
+                    <div class="cau-chuc">Lời chúc của: Vũ Mai Linh</div>
+                    <div class="cau-chuc">Lời chúc của: Bùi Hoàng Lan</div>
+                    <div class="cau-chuc">Lời chúc của: Cao Hương Giang</div>
+                    <div class="cau-chuc">Lời chúc của: Hoàng Minh Thảo</div>
+                    <div class="cau-chuc">Lời chúc của: Lý Bảo Ngọc</div>
+                </div>
+                <div class="text-di-chuyen">
+                    <div id="marq" class="marquee">
+
+                        <h4> Chúc bạn năm mới luôn khỏe mạnh, vui vẻ và gặt hái được nhiều thành công trong mọi lĩnh vực!</h4>
+                        <h4> Chúc bạn một mùa xuân rộn ràng, năm mới phát tài, phát lộc, vạn sự như ý!</h4>
+                        <h4> Năm mới, chúc bạn luôn bình an, hạnh phúc và sớm đạt được những ước mơ của mình!</h4>
+                        <h4> Chúc bạn đón xuân vui vẻ, Tết đến an lành, mọi điều tốt đẹp sẽ đến với bạn trong năm mới!</h4>
+                        <h4> Chúc bạn và gia đình năm mới hạnh phúc, an khang thịnh vượng, và gặp nhiều may mắn!</h4>
+                        <h4> Năm mới đến rồi, chúc bạn sức khỏe dồi dào, công danh thăng tiến và luôn ngập tràn niềm vui!</h4>
+                        <h4> Chúc bạn đón một năm mới ấm áp, yêu thương và thật nhiều niềm vui bên gia đình và bạn bè!</h4>
+                        <h4> Xuân về tết đến, chúc bạn tràn đầy niềm vui, đón một năm mới an lành và thành công vượt bậc!</h4>
+                        <h4> Chúc bạn mọi chuyện suôn sẻ, công việc thuận lợi, cuộc sống luôn ngập tràn niềm vui và hạnh phúc!</h4>
+                        <h4> Năm mới chúc bạn gặp nhiều may mắn, tài lộc như nước, sức khỏe như rồng, và tình cảm luôn ấm áp!</h4>
+                        <h4> Chúc bạn năm mới rực rỡ như ánh xuân, thịnh vượng và hạnh phúc bên gia đình yêu thương!</h4>
+                        <h4> Chúc bạn đón Tết vui vẻ, tâm hồn luôn tươi mới, và mọi điều tốt đẹp đều sẽ đến!</h4>
+                        <h4> Năm mới chúc bạn luôn lạc quan, gặp nhiều may mắn và thành công trong mọi công việc!</h4>
+                        <h4> Chúc bạn một mùa xuân an lành, hạnh phúc và sự nghiệp vươn xa, không ngừng phát triển! </h4>
+                        <h4> Năm mới, chúc bạn luôn tươi trẻ, yêu đời và gặp thật nhiều niềm vui trong cuộc sống! </h4>
+                        <h4> Chúc bạn năm mới phát tài phát lộc, công việc thuận buồm xuôi gió và sức khỏe dồi dào!</h4>
+                        <h4> Năm mới đến, chúc bạn tình yêu, niềm vui và sự nghiệp vươn tới những đỉnh cao mới!</h4>
+                        <h4> Chúc bạn năm mới nhiều niềm vui, hạnh phúc, và mọi điều may mắn luôn đồng hành cùng bạn!</h4>
+                        <h4> Chúc bạn và gia đình một năm mới an khang, thịnh vượng, đong đầy yêu thương và hạnh phúc!</h4>
+                        <h4> Năm mới chúc bạn thành công, sức khỏe tốt và luôn vui vẻ, tràn đầy năng lượng tích cực!</h4>
+    
+                      </div>
+    
+                </div>
+               </div>
             </div>
-            <div class="body-content">
-                <div class="box-binhchon">
+            <div class="body">
+                <!-- // text- noi dung  -->
 
-                <!-- // binh chon 1 nguoi  -->
-                    <div id="bc01" class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Nguyễn Minh Công</div>
-                        </div>
-                        <div class="img-bc">
-                            <img src="./images/card/MinhCong.png" alt="">
-                        </div>
+                <div class="text-td">
+                    <img src="./images/text_cauchuc.png" alt="">
+                    <div class="text-td-sub" id="taohinhanh">
+                        HÃY CHỌN MỘT HÌNH ẢNH MÀ BẠN MUỐN THÊM LỜI CHÚC
                     </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
+                </div>
 
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Trần Kim Anh</div>
+                <!-- //ket thuc noi dung  -->
+                <div class="slides-bar">
+                    <div class="slides-bar-loi-chuc">
+                        <div class="sub-slide">
+                            <img src="./images/slide-01.png" alt="">
                         </div>
-                        <div class="img-bc">
-                            <img src="./images/card/KimAnh.png" alt="">
+                        <div class="sub-slide">
+                           <img src="./images/slide-02.png" alt="">
                         </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Nguyễn Quỳnh Anh</div>
+                        <div class="sub-slide">
+                            <img src="./images/slide-03.png" alt="">
                         </div>
-                        <div class="img-bc">
-                            <img src="./images/card/QuynhAnh.png" alt="">
+                        <div class="sub-slide">
+                            <img src="./images/slide-04.png" alt="">
                         </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Vũ Tú Anh</div>
+                        <div class="sub-slide">
+                            <img src="./images/slide-05.png" alt="">
                         </div>
-                        <div class="img-bc">
-                            <img src="./images/card/TuAnh.png" alt="">
+                        <div class="sub-slide">
+                           <img src="./images/slide-06.png" alt="">
                         </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Thái Thanh Loan</div>
+                        <div class="sub-slide">
+                          <img src="./images/slide-07.png" alt="">
                         </div>
-                        <div class="img-bc">
-                            <img src="./images/card/ThanhLoan.png" alt="">
+                        <div class="sub-slide">
+                          <img src="./images/slide-08.png" alt="">
+                        </div>
+                        <!-- <div class="sub-slide">
+                            <a href=""><img src="./images/slide-09.png" alt=""></a>
+                        </div> -->
+                        <div class="sub-slide">
+                          <img src="./images/slide-10.png" alt="">
+                        </div>
+                        <div class="sub-slide">
+                           <img src="./images/slide-11.png" alt="">
                         </div>
                     </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Vũ Thị Xuân</div>
+                    <div id="clickLeft" class="slide-left moveS"><i class="fa-solid fa-angle-left"></i></div>
+                    <div id="clickRight" class="slide-right moveS"><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+               
+                <div class="event" id="evenhapdan">
+                    <div class="event-ct">
+                        <div class="ev-left">
+                            <div class="text1 active" data="hinh1">
+                                Khai bút Deli - Năm mới như ý
+                            </div>
+                            <div class="text1" data="hinh2">
+                                Khai bút Deli - Năm mới như ý
+                            </div>
+                            <div class="text1" data="hinh3">
+                                Khai bút Deli - Năm mới như ý
+                            </div>
+                            <div class="text1" data="hinh4">
+                                Khai bút Deli - Năm mới như ý
+                            </div>
+                            <div class="text1" data="hinh5">
+                                Khai bút Deli - Năm mới như ý
+                            </div>
+                           
                         </div>
-                        <div class="img-bc">
-                            <img src="./images/card/VuXuan.png" alt="">
-                        </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Nguyễn Đặng Tuấn Long</div>
-                        </div>
-                        <div class="img-bc">
-                            <img src="./images/card/TuanLong.png" alt="">
-                        </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Nguyễn Thanh Hoàng</div>
-                        </div>
-                        <div class="img-bc">
-                            <img src="./images/card/ThanhHoang.png" alt="">
-                        </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Nguyễn Thị Thủy</div>
-                        </div>
-                        <div class="img-bc">
-                            <img src="./images/card/Thuy.png" alt="">
-                        </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Trần Thị Thu Hương</div>
-                        </div>
-                        <div class="img-bc">
-                            <img src="./images/card/HUONG.png" alt="">
+                        <div class="ev-right">
+                            <div id="hinh1" class="active">
+                                <img src="./images/ev1.png" alt="">
+                            </div>
+                            <div id="hinh2">
+                                <img src="./images/ev2.png" alt="">
+                            </div>
+                            <div id="hinh3">
+                                <img src="./images/ev3.png" alt="">
+                            </div>
+                            <div id="hinh4">
+                                <img src="./images/ev4.png" alt="">
+                            </div>
+                            <div id="hinh5">
+                                <img src="./images/av6.png" alt="">
+                            </div>
+                          
                         </div>
                     </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Hoàng Thị Thoa</div>
-                        </div>
-                        <div class="img-bc">
-                            <img src="./images/card/Thoa.png" alt="">
-                        </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Đinh Thị Mai Anh</div>
-                        </div>
-                        <div class="img-bc">
-                            <img src="./images/card/MaiAnh.png" alt="">
-                        </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Đoàn Ngọc Linh</div>
-                        </div>
-                        <div class="img-bc">
-                            <img src="./images/card/NgocLinh.png" alt="">
-                        </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
-                <!-- // binh chon 1 nguoi  -->
-                    <div class="binhchon">
-                        <div class="text-binhchon">
-                            Click Bình chọn cho <br>
-                            <div class="tbc">Trịnh Thị Kim Ngân</div>
-                        </div>
-                        <div class="img-bc">
-                            <img src="./images/card/KimNgan.png" alt="">
-                        </div>
-                    </div>
-                <!-- ket thuc binh chon 1 nguoi  -->
 
-                <div id="popUp">
-                    <div id="popupDk">
-                        <div id="tsv">Chúc bạn may mắn lần sau</div>
-                        <div id="dong">Xác Nhận</div>
+                    <div class="text-title">
+                        <img src="./images/text_SuKien.png" alt="text su kien">
                     </div>
-                    <div id="wait">Đang tiến hành đăng ký ...</div>
+                </div>
+                <!-- // ket thu event  -->
+                    <div class="filter" id="filtercucdinh">
+                        <div class="file-img left2">
+                            <img src="./images/NON.png" alt="">
+                        </div>
+                        <div class="file-img right2">
+                            <img src="./images/hoaDao.png" alt="">
+                        </div>
+                        <div class="title">
+                            <img src="./images/text_filter.png" alt="">
+
+                        </div>
+                        <div class="filter-ct">
+                            <div class="video">
+                                <video loop autoplay muted src="./images/tiktok_filter.mp4"></video>
+                            </div>
+                            <div class="text-qr">
+                                <h4>Quét QR Bên Dưới</h4>
+                                <p>Để sử dụng filter Tiktok nha</p>
+                                <span>Filter sẽ random trong 05 tấm thẻ như video mẫu, những tấm thẻ này sẽ phỏng đoán những điều trong năm 2025 này của bạn. Hãy sử dụng nó ngay để biết trước năm nay bạn sẽ gặp và có trải nghiệm gì !!!</span>
+                                <img src="./images/filter-qr.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                <!-- // ket thuc Filter  -->
+                <div class="form" id="formdangky">
+                    <div class="form-title">
+                        ĐĂNG KÝ THAM GIA CHƯƠNG TRÌNH
+                    </div>
+                    <form id="test-form" method="GET" action="https://script.google.com/macros/s/AKfycbzScpOAOl_4Htqy85xsW8YFrcXIzVw_Qs1ORbUo3WDyNqfWYvUsxnKWq1MqlmIKCBWn/exec">
+                        
+                        <div class="f">
+                            <label for="">Họ và tên:</label><br>
+                            <input type="text" name="Ho_Ten" required placeholder="Nhập họ và tên..." />
+                        </div>
+                        <div class="f">
+                            <label for="">Họ và tên bố mẹ <span>(trường hợp trẻ nhỏ < 13 tuổi)</span></label><br>
+                            <input type="text" name="Ho_Ten_bm" placeholder="Nhập họ và tên bố hoặc mẹ..."/>
+                        </div>
+                        <div class="f">
+                            <label for="">Độ tuổi: </label><br>
+                            <input type="number" name="Do_Tuoi" required placeholder="Nhập tuổi của người tham gia..." />
+                        </div>
+                        <div class="f">
+                            <label for="">Số điện thoại: </label><br>
+                            <input type="number" name="Phone" placeholder="Nhập số điện thoại..."/>
+                        </div>
+                        <div class="f">
+                            <label for="">Chương trình tham gia:</label><br>
+                            <input type="text" name="ChuongTrinh" required placeholder="Nhập tên chương trình bạn muốn tham gia..." />
+                        </div>
+                        <!-- <div class="f">
+                            <label for="Thoi_Gian">Ngày đăng ký: </label><br>
+                            <input type="date" name="Thoi_Gian" min="2024-07-11" max="2024-08-31"/>
+                        </div> -->
+                        <!-- <div class="f">
+                            <label for="">Ngày đăng ký: </label><br>
+                            <input type="text" name="Time" required placeholder=""/>
+                        </div> -->
+                        <!-- <div class="f">
+                            <label for="Thoi_Gian">Ngày đăng ký: </label><br>
+                            <select name="Thoi_Gian" id="Thoi_Gian">
+                                <option value="">--Hãy chọn ngày đăng ký--</option>
+                                <option value="Ngày nào đó của Tháng 07">Ngày nào đó của Tháng 07</option>
+                                <option value="Ngày nào đó của Tháng 08">Ngày nào đó của Tháng 08</option>
+                            </select>
+                        </div> -->
+                        <!-- <div class="f">
+                            <label for="Dia_Diem">Địa điểm tham gia hoạt động: </label><br>
+                            <select name="Dia_Diem" required id="Dia_Diem">
+                                <option value="">--Hãy chọn địa điểm--</option>
+                                <option value="AEON Long Biên">AEON MALL Long Biên - Hà Nội</option>
+                                <option value="AEON Hà Đông">AEON MALL Hà Đông - Hà Nội</option>
+                                <option value="AEON Hải Phòng">AEON MALL Hải Phòng Lê Chân</option>
+                                <option value="AEON MALL Tân Phú Celadon - TP.HCM">AEON MALL Tân Phú Celadon - TP.HCM</option>
+                                <option value="AEON MALL Bình Tân - TP.HCM">AEON MALL Bình Tân - TP.HCM</option>
+                                <option value="AEON MALL Bình Dương Canary">AEON MALL Bình Dương Canary</option>
+                            </select>
+                        </div> -->
+                        
+                        <!-- <input type="text" name="Time" id="time" value=""> -->
+                        <button type="submit"id="submit-form">Đăng Ký Tham Gia</button>
+                    </form>
                 </div>
 
 
-
-                </div>
             </div>
-            <div class="footer-content">
-                <div class="logo">
-                    <img src="./images/text.png" alt="">
-                </div>
-                <div class="slogan">
-                    THE BEST MATE
-                </div>
-            </div>
-            <div id="nen_den" class="nenden"></div>
-            <div class="form_DK" id="form_dk">
-                <div class="title-form">
-                    PHIẾU BÌNH BẦU <br> BAN CHẤP HÀNH CÔNG ĐOÀN 
-                </div>
-                <form id="test-form" method="GET" action="https://script.google.com/macros/s/AKfycbyfwCkqk8k7AtP5SGqsl55LPUJJdYS91vTyVvtFG8S88xrY7GDx-Sbp4Ynnuj4iKUD-iQ/exec">
-                    <div class="inp">
-                        <label for="Name_voter">HỌ VÀ TÊN:</span></label><br>
-                        <input type="text" name="Name_voter" required placeholder=" Nhập Họ và Tên"/>
-                    </div>
-                    <div class="inp">
-                        <label for="Positon_voter">PHÒNG BAN:</span></label><br>
-                        <input type="text" name="Positon_voter" required placeholder="Nhập Phòng Ban"/>
-                    </div>
-                    <div class="inp" >
-                        <label for="Name_candidate">BẠN ĐANG BẦU CỬ ỨNG VIÊN:</span></label><br>
-                        <input id="name_UV" type="text" name="Name_candidate" value="" required placeholder=""/>
-                    </div>
-                    <div class="inp">
-                        <label for="Place">CHỨC VỤ BẦU CỬ: </label><br>
-                        <select name="voting_position" required>
-                            <option value="">--Hãy chọn chức vụ bầu cử--</option>
-                            <option value="CHỦ TỊCH CÔNG ĐOÀN">CHỦ TỊCH CÔNG ĐOÀN</option>
-                            <option value="PHÓ CHỦ TỊCH CÔNG ĐOÀN">PHÓ CHỦ TỊCH CÔNG ĐOÀN</option>
-                            <option value="ỦY VIÊN CÔNG ĐOÀN">ỦY VIÊN CÔNG ĐOÀN</option>
-                            <option value="KẾ TOÁN CÔNG ĐOÀN">KẾ TOÁN CÔNG ĐOÀN</option>
-                            <option value="THỦ QUỸ CÔNG ĐOÀN">THỦ QUỸ CÔNG ĐOÀN</option>
-                        </select>
-                    </div>
-                    <button type="submit"id="submit-form">BẦU CỬ ỨNG CỬ VIÊN</button>
-                </form>
-            </div>
+
+            <!-- end the body  -->
         </div>
     </div>
-    <div id="max_int">
-        Bạn đã Bình Bầu hết 7 lần <br>
-        Kết thúc bình bầu tại đây!
-    </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+        
+    <script src="https://code.jquery.com/jquery-1.3.2.min.js" integrity="sha256-yDcKLQUDWenVBazEEeb0V6SbITYKIebLySKbrTp2eJk=" crossorigin="anonymous"></script>
+    <script src="./js/jquery.easing.1.3.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>
