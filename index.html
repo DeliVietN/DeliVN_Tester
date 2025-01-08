@@ -27,11 +27,13 @@
     <!-- Popup -->
     <div class="popup-overlay" id="popupOverlay"></div>
     <div class="popup" id="popup">
-        <!-- <div class="img-text" id="text1">Chúc bạn năm mới an khang, thịnh vượng, mọi điều như ý, vạn sự hanh thông</div>
-        <div class="img-text" id="text2">Lê Xuân Hải</div> -->
-        <img id="popupImage" alt="Popup Image">
-        <input id="popup_name" type="text" placeholder="Nhập tên của bạn">
-        <input id="popup_loichuc" type="text" placeholder="Nhập lời chúc của bạn">
+        <div class="img-box">
+            <div class="img-text" id="text1"></div>
+            <div class="img-text" id="text2"></div>
+            <img id="popupImage" alt="Popup Image">
+        </div>
+        <input id="popup_name" type="text" value="Nhập lời chúc của bạn vào đây nhé...">
+        <input id="popup_loichuc" type="text" value="Nhập tên của bạn...">
         <button id="createImageButton">Tạo Hình Ảnh</button>
         <a id="downloadButton" href="#" download="image.png">Tải về</a>
     </div>
@@ -44,10 +46,10 @@
         <div class="layout-sk">
             <div class="header">
                <div class="menu-sk">
-                    <div class="logo">
+                    <div class="logo" id="logoLp">
                         <img src="./images/logo_red.svg" alt="">
                     </div>
-                    <ul class="nav">
+                    <ul class="nav" id="nav">
                         <li><a class="active" href="#nhannganloichuc">Nhận ngàn câu chúc</a></li>
                         <li><a href="#taohinhanh">Tạo tấm hình chúc tết với Deli</a></li>
                         <li><a href="#evenhapdan">Event hấp dẫn</a></li>
@@ -131,36 +133,76 @@
                 <div class="slides-bar">
                     <div class="slides-bar-loi-chuc">
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                             <img src="./images/slide-01.png" alt="">
                         </div>
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                            <img src="./images/slide-02.png" alt="">
                         </div>
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                             <img src="./images/slide-03.png" alt="">
                         </div>
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                             <img src="./images/slide-04.png" alt="">
                         </div>
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                             <img src="./images/slide-05.png" alt="">
                         </div>
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                            <img src="./images/slide-06.png" alt="">
                         </div>
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                           <img src="./images/slide-07.png" alt="">
                         </div>
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                           <img src="./images/slide-08.png" alt="">
                         </div>
                         <!-- <div class="sub-slide">
                             <a href=""><img src="./images/slide-09.png" alt=""></a>
                         </div> -->
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                           <img src="./images/slide-10.png" alt="">
                         </div>
                         <div class="sub-slide">
+                            <div class="sl-loichuc">HÃY CLICK VÀ ĐIỀN
+                                CHO DELI BIẾT LỜI CHÚC
+                                CỦA BẠN NHÉ <3 </div>
+                            <div class="sl-ten">TÊN CỦA BẠN SẼ Ở VỊ TRÍ NÀY</div>
                            <img src="./images/slide-11.png" alt="">
                         </div>
                     </div>

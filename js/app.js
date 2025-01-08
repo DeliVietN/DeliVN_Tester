@@ -240,60 +240,6 @@ const canvas = document.getElementById("fireworksCanvas");
         popupOverlay.style.display = 'none';
       });
 
-    //   // Xử lý khi nhấn nút "Tạo hình ảnh"
-    // createImageButton.addEventListener('click', () => {
-    //     const text1 = input1.value; // Lấy giá trị từ input 1
-    //     const text2 = input2.value; // Lấy giá trị từ input 2
-  
-    //     // Tạo hình ảnh mới
-    //     const newImage = document.createElement('div');
-    //     newImage.style.position = 'relative';
-    //     newImage.style.display = 'inline-block';
-    //     newImage.style.margin = '10px';
-  
-    //     // Hình ảnh chính
-    //     const imgElement = document.createElement('img');
-    //     imgElement.src = popupImage.src;
-    //     imgElement.style.width = '300px';
-    //     imgElement.style.height = 'auto';
-    //     imgElement.style.border = '1px solid #ccc';
-    //     imgElement.style.borderRadius = '4px';
-  
-    //     // Văn bản 1
-    //     const textOverlay1 = document.createElement('div');
-    //     textOverlay1.innerText = text1;
-    //     textOverlay1.style.position = 'absolute';
-    //     textOverlay1.style.top = '10px';
-    //     textOverlay1.style.left = '10px';
-    //     textOverlay1.style.color = 'white';
-    //     textOverlay1.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    //     textOverlay1.style.padding = '5px';
-    //     textOverlay1.style.borderRadius = '4px';
-  
-    //     // Văn bản 2
-    //     const textOverlay2 = document.createElement('div');
-    //     textOverlay2.innerText = text2;
-    //     textOverlay2.style.position = 'absolute';
-    //     textOverlay2.style.bottom = '10px';
-    //     textOverlay2.style.right = '10px';
-    //     textOverlay2.style.color = 'white';
-    //     textOverlay2.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    //     textOverlay2.style.padding = '5px';
-    //     textOverlay2.style.borderRadius = '4px';
-  
-    //     // Ghép các phần tử
-    //     newImage.appendChild(imgElement);
-    //     newImage.appendChild(textOverlay1);
-    //     newImage.appendChild(textOverlay2);
-  
-    //     // Thêm hình ảnh vào body
-    //     document.body.appendChild(newImage);
-  
-    //     // Đóng popup
-    //     popup.style.display = 'none';
-    //     popupOverlay.style.display = 'none';
-    //   });
-    // Xử lý tạo hình ảnh
     createImageButton.addEventListener('click', () => {
         const text1 = input1.value;
         const text2 = input2.value;
@@ -311,23 +257,118 @@ const canvas = document.getElementById("fireworksCanvas");
           // Vẽ ảnh lên canvas
           ctx.drawImage(img, 0, 0);
   
-          // Vẽ text 1
-          ctx.font = '20px Arial';
-          ctx.fillStyle = 'white';
-          ctx.fillText(text1, 20, 40);
-  
-          // Vẽ text 2
-          ctx.font = '20px Arial';
-          ctx.fillStyle = 'white';
-          ctx.fillText(text2, canvas.width - 120, canvas.height - 20);
-  
+          // Thiết lập font và màu
+            ctx.font = 'bold 60px "Lexend", sans-serif';
+            ctx.textAlign = 'center'; // Căn giữa theo trục X
+            ctx.fillStyle = '#db1919'; // Màu chữ
+          
+            const maxWidth = canvas.width * 0.8; // Chiều rộng tối đa của văn bản (80% chiều rộng ảnh)
+            const lineHeight = 80; // Khoảng cách giữa các dòng
+
+             // Thêm text 1
+            wrapText(ctx, text1.toUpperCase(), canvas.width / 2, (canvas.height / 10) * 7, maxWidth, lineHeight);
+            
+             // Thêm text 2
+            ctx.font = 'bold 30px "Lexend", sans-serif';
+            ctx.fillStyle = 'black'; // Màu chữ khác cho text2
+            wrapText(ctx, text2.toUpperCase(), canvas.width / 2, (canvas.height / 10) * 9.5, maxWidth, lineHeight);
+
+
           // Hiển thị nút tải về
           downloadButton.style.display = 'inline-block';
           downloadButton.href = canvas.toDataURL('image/png');
-          downloadButton.download = 'my-image.png';
-          downloadButton.click();
+          downloadButton.download = 'Deli-image.png';
+        //   downloadButton.click();
         };
       });
+
+      // Hàm tự động chuyển dòng
+        function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+             // Loại bỏ dấu phẩy và thay bằng dấu cách
+            // text = text.replace(/,/g, ' ');
+
+
+            const words = text.split(' ');
+            let line = '';
+            let lines = [];
+        
+            for (let i = 0; i < words.length; i++) {
+            const testLine = line + words[i] + ' ';
+            const testWidth = ctx.measureText(testLine).width;
+            if (testWidth > maxWidth && i > 0) {
+                lines.push(line);
+                line = words[i] + ' ';
+            } else {
+                line = testLine;
+            }
+            }
+            lines.push(line);
+        
+            for (let j = 0; j < lines.length; j++) {
+            ctx.fillText(lines[j], x, y + j * lineHeight);
+            }
+        }
+
+
+
+        // phan nay chinh demo text
+        let textDemo1 = document.getElementById('text1');
+        let textDemo2 = document.getElementById('text2');
+        textDemo1.innerHTML = input1.value;
+        textDemo2.innerHTML = input2.value;
+
+
+
+        input1.addEventListener('keyup',()=>{
+            textDemo1.innerHTML = input1.value;
+            // console.log(textDemo1.innerText);
+        })
+        input2.addEventListener('keyup',()=>{
+            textDemo2.innerHTML = input2.value;
+            // console.log(textDemo1.innerText);
+        })
+
+
+        // ham responsive 
+            const logoLP = document.getElementById('logoLp');
+            const navBarMenu = document.getElementById('nav');
+
+
+        
+
+         // Hàm kiểm tra kích thước màn hình
+
+            function checkScreenSize() {
+
+                const width = window.innerWidth;
+                if (width <= 800) {
+                    //logo
+                    logoLP.addEventListener('click',()=>{
+                        navBarMenu.classList.toggle('active');
+                    })
+
+                    //loichuc
+                    canvas.style.display= 'none';
+
+                    // slide 
+                    clickRight.addEventListener("click",() =>{
+                        IndexSlide = (IndexSlide < subSlides.length - vitriSlides+1) ? IndexSlide + 1 : subSlides.length-vitriSlides;
+                        MoveSlider();
+                        
+                    });
+
+
+                } 
+                else{
+                    canvas.style.display= 'block';
+                }
+            }
+        
+            // Gọi hàm khi tải trang và khi thay đổi kích thước
+            checkScreenSize();
+            window.addEventListener('resize', checkScreenSize);
+
+      
 
 
 

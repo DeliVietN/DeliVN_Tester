@@ -219,6 +219,24 @@ li a.active{
     float:left;
     margin-left: 20px;
     transition:0.5s;
+    position: relative;
+    cursor: pointer;
+  }
+  .sl-loichuc,.sl-ten{
+    position: absolute;
+    width: 92%;
+    font-size: 16px;
+    font-weight: bold;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #db1919;
+    bottom: 20%;
+  }
+  .sl-ten{
+    font-size: 12px;
+    bottom: 5%;
+    color: #26231e;
   }
   .sub-slide:first-child{
     margin-left: 0px;
@@ -457,16 +475,16 @@ canvas {
 .popup {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   background-color: #ae1919;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   text-align: center;
   border-radius: 8px;
-  width: 500px;
+  width: 400px;
 }
 .popup img {
   max-width: 100%;
@@ -495,16 +513,221 @@ canvas {
 .popup button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #ffac00;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 .popup button:hover {
-  background-color: #0056b3;
+  background-color: #ffde9b;
+  color: #ae1919;
 }
 #downloadButton {
   display: none;
   margin-top: 10px;
+  color: white;
+  text-decoration: none;
+  background-color: #ae1919;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
+
+
+.img-box{
+  position: relative;
+}
+.img-text{
+position: absolute;
+bottom: 25%;
+font-size: 20px;
+font-weight: bold;
+width: 350px;
+left: 50%;
+transform: translateX(-50%);
+color: #db1919;
+
+}
+.img-text#text2{
+  color: black;
+  font-size: 15px;
+  bottom: 8%;
+}
+
+
+
+@media only screen and (max-width:800px) {
+  .layout-sk{
+    width: 100vw;
+  }
+  .menu-sk{
+   width: 100vw;
+    height: 80px;
+    flex-direction: column;
+  }
+  .menu-sk .logo{
+    margin-left: 0px;
+    width: 15%;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  ul.nav{
+    display: none;
+    width: auto;
+    height: auto;
+    padding: 10px 20px ;
+    position: absolute;
+    flex-direction: column;
+    margin-right: 0;
+    /* margin-top: 10px; */
+    top: 70px;
+    transform-origin: top center;
+    background-color:white;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+
+ul.nav.active{
+  display: block;
+  animation: anhienMenu 0.5s ease-in-out forwards;
+}
+@keyframes anhienMenu {
+  0%{
+    opacity: 0;
+    margin-top: 10%;
+  }
+  100%{
+    opacity: 1;
+    margin-top: 0%;
+  }
+
+  
+ 
+}
+
+
+.loi-chuc, .cau-chuc{
+  font-size: 20px;
+}
+.cau-chuc{
+  font-size: 10px;
+}
+.text-di-chuyen{
+  width: 90vw;
+  left: 50%;
+  bottom: 0;
+  border-color: white;
+  padding: 5px;
+  height: 50px;
+  transform: translateX(-50%) translateY(150%);
+
+}
+.marquee h4{
+color: white;
+}
+.header{
+  margin-top: 100px;
+}
+.body{
+  margin-top: 50px;
+}
+
+.event-ct{
+  flex-direction: column;
+  justify-content: center;
+
+}
+.event-ct .ev-right{
+  width: 100%;
+}
+.ev-right{
+  order: 1;
+}
+.ev-left{
+  order: 2;
+  width: 80%!important;
+}
+.ev-left .text1{
+  font-size: 16px;
+}
+.text1.active{
+  transform: translateX(0px)!important;
+}
+.text-title{
+  width: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.filter .title{
+  width: 60%;
+}
+.filter-ct .video{
+  width: 40%;
+}
+.filter .file-img.left2{
+  width: 20%;
+}
+ /* end max <800  */
+}
+@media only screen and (max-width:500px){
+  .khung-text-banner{
+    display: none;
+  }
+
+
+  .cau-chuc-cua{
+    top: auto;
+    bottom: 20%;
+    
+  }
+  .text-di-chuyen{
+    transform: translateX(-50%) translateY(120%);
+  }
+  .loi-chuc{
+    font-size: 18px;
+  }
+  .filter-ct{
+    flex-direction: column;
+    align-items: center;
+  }
+  .filter .title{
+    z-index: 6;
+  }
+  .text-qr{
+    width: 80%;
+    text-align: center;
+    margin-top: 20px;
+    
+  }
+  .text-qr img{
+    width: 50%;
+  }
+  .form{
+    width: 80%;
+  }
+  form{
+    width: 90%;
+  }
+  .popup{
+    width: 280px;
+    top: 0%;
+    padding: 10px;
+  }
+  .popup input{
+    width: 100%;
+    margin: 2px auto;
+  }
+  .img-text{
+    width: 240px;
+  }
+  .popup img{
+    margin-bottom: 0;
+  }
+  /* end resize  */
+}
+
+
+
