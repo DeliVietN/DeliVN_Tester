@@ -1,5 +1,10 @@
+window.addEventListener("DOMContentLoaded", (event) => {
 
-const TempImage = window.Image
+  
+
+const TempImage = window.Image;
+const width = window.innerWidth;
+console.log(width);
 
 const Image = function() {
       const img = new TempImage()
@@ -43,7 +48,7 @@ MainDc.animate(
     ],
     {
         // timing options
-        duration: 40000,
+        duration: 60000,
         iterations: Infinity,
     },
 );
@@ -55,15 +60,26 @@ const subSlides = document.querySelectorAll('.sub-slide');
 const clickLeft = document.getElementById('clickLeft');
 const clickRight = document.getElementById('clickRight');
 const WsubSlides = subSlides[0].offsetWidth;
-const vitriSlides = Math.trunc(slidesBar.offsetWidth / WsubSlides);
+let vitriSlides = Math.trunc(slidesBar.offsetWidth / WsubSlides);
+// const wmainSlide = slidesBar.offsetWidth;
 console.log(vitriSlides);
 console.log(WsubSlides);
 // hieu ung click Left Right
 let IndexSlide = 0;
 //ADD funcition cho kich thuoc
-function MoveSlider(){
-    slidesBar.style.transform = `translateX(-${IndexSlide * WsubSlides}px)`;
+
+if(width < 500){
+    function MoveSlider(){
+        slidesBar.style.transform = `translateX(-${IndexSlide * WsubSlides}px)`;
+    }
 }
+else{
+    function MoveSlider(){
+        slidesBar.style.transform = `translateX(-${IndexSlide * WsubSlides}px)`;
+    }
+}
+
+
 // click
 
 clickLeft.addEventListener("click",() =>{
@@ -165,7 +181,7 @@ const canvas = document.getElementById("fireworksCanvas");
 
         /// scroll navigate ... 
         $(function() {
-            $('ul.nav a').bind('click',function(event){
+            $('.nav a').bind('click',function(event){
                 var $anchor = $(this);
         
                 $('html, body').stop().animate({
@@ -224,7 +240,7 @@ const canvas = document.getElementById("fireworksCanvas");
             const imageUrl = e.src; // Lấy URL của hình ảnh
             console.log(imageUrl);
             popupImage.src = imageUrl; // Đặt URL vào popup
-            popup.style.display = 'block'; // Hiển thị popup
+            popup.style.display = 'flex '; // Hiển thị popup
             popupOverlay.style.display = 'block'; // Hiển thị overlay
 
         });
@@ -238,6 +254,7 @@ const canvas = document.getElementById("fireworksCanvas");
         popupOverlay.addEventListener('click', () => {
         popup.style.display = 'none';
         popupOverlay.style.display = 'none';
+        downloadButton.style.display='none';
       });
 
     createImageButton.addEventListener('click', () => {
@@ -269,9 +286,9 @@ const canvas = document.getElementById("fireworksCanvas");
             wrapText(ctx, text1.toUpperCase(), canvas.width / 2, (canvas.height / 10) * 7, maxWidth, lineHeight);
             
              // Thêm text 2
-            ctx.font = 'bold 30px "Lexend", sans-serif';
+            ctx.font = 'bold 40px "Lexend", sans-serif';
             ctx.fillStyle = 'black'; // Màu chữ khác cho text2
-            wrapText(ctx, text2.toUpperCase(), canvas.width / 2, (canvas.height / 10) * 9.5, maxWidth, lineHeight);
+            wrapText(ctx, text2.toUpperCase(), canvas.width / 2, (canvas.height / 10) * 9.2, maxWidth, lineHeight);
 
 
           // Hiển thị nút tải về
@@ -279,6 +296,7 @@ const canvas = document.getElementById("fireworksCanvas");
           downloadButton.href = canvas.toDataURL('image/png');
           downloadButton.download = 'Deli-image.png';
         //   downloadButton.click();
+            
         };
       });
 
@@ -314,8 +332,8 @@ const canvas = document.getElementById("fireworksCanvas");
         // phan nay chinh demo text
         let textDemo1 = document.getElementById('text1');
         let textDemo2 = document.getElementById('text2');
-        textDemo1.innerHTML = input1.value;
-        textDemo2.innerHTML = input2.value;
+        textDemo1.innerHTML = input1.getAttribute('placeholder');
+        textDemo2.innerHTML = input2.getAttribute('placeholder');
 
 
 
@@ -340,7 +358,6 @@ const canvas = document.getElementById("fireworksCanvas");
 
             function checkScreenSize() {
 
-                const width = window.innerWidth;
                 if (width <= 800) {
                     //logo
                     logoLP.addEventListener('click',()=>{
@@ -351,11 +368,16 @@ const canvas = document.getElementById("fireworksCanvas");
                     canvas.style.display= 'none';
 
                     // slide 
-                    clickRight.addEventListener("click",() =>{
-                        IndexSlide = (IndexSlide < subSlides.length - vitriSlides+1) ? IndexSlide + 1 : subSlides.length-vitriSlides;
-                        MoveSlider();
+                    // let vitriSlides = Math.ceil(slidesBar.offsetWidth / WsubSlides);
+                    
+
+
+
+                    // clickRight.addEventListener("click",() =>{
+                    //     IndexSlide = (IndexSlide < subSlides.length - vitriSlides) ? IndexSlide + 1 : subSlides.length-vitriSlides;
+                    //     MoveSlider();
                         
-                    });
+                    // });
 
 
                 } 
@@ -368,12 +390,37 @@ const canvas = document.getElementById("fireworksCanvas");
             checkScreenSize();
             window.addEventListener('resize', checkScreenSize);
 
+
+
+            // lay du lieu form
+            function sendForm() {
+                // đem tất cả dữ liệu trong form id là 'google-form' gom thành biến data
+                let data = $('#google-form').serialize();
+            
+                $.ajax({ //Sử dụng Ajax gửi dữ liệu đi
+                    url: 'https://script.google.com/macros/s/AKfycbw61IYR_xCwbID3ju2SSSsaoxMjrLmtGAfzVeK-Dy-WhkrjDVIYZfyR2LpD1rNibv9Iww/exec',
+                    method: 'GET',
+                    dataType: 'json',
+                    data: data,
+                    success: function(responseData, textStatus, jqXHR) {
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                    }
+                });
+            
+                window.jQuery(this).trigger('reset');
+                alert('Đăng Ký Thành Công!');
+            
+                return true;
+            };
+
       
 
 
 
-      
-
+   // loaded all content   
+ });
 
 
 

@@ -41,6 +41,29 @@ img{width: 100%;}
 .layout-sk{
     width: 1200px;
 }
+
+.nut-event{
+  width: calc((100vw + 100vh)/20);
+  position: fixed;
+  top: 13%;
+  right: 3%;
+  z-index: 10;
+  cursor: pointer;
+  animation: scaleNut 1s ease-in-out infinite;
+  transition: 0.5s;
+}
+@keyframes scaleNut {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+}
+.nut-event:hover{
+  animation: none;
+  
+}
 .header{
     width: 100%;
     
@@ -57,7 +80,7 @@ img{width: 100%;}
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     background: rgb(244,208,109);
-    z-index: 10;
+    z-index: 99;
     position: fixed;
     top: 0px;
     background: linear-gradient(180deg, rgba(244,208,109,1) 0%, rgba(208,161,63,1) 100%);
@@ -392,7 +415,29 @@ video{
 }
 
 
-
+.text-qr{
+  flex-direction: column;
+}
+.text-qr a{
+  position: relative;
+  z-index: 10;
+  text-transform: uppercase;
+  margin-top: 20px;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 10px;
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  background: rgb(255,50,23);
+  transition: 0.5s;
+  background: linear-gradient(74deg, rgba(255,50,23,1) 0%, rgba(186,25,25,1) 100%);
+}
+.text-qr a:hover{
+  transform: translateX(25%);
+  transition: 0.5s;
+}
 
 
 /* // phan form  */
@@ -422,10 +467,10 @@ form{
   position: relative;
   z-index: 2;
 }
-label,input{
+label,input,select{
   width: 100%;
 }
-input{
+input,select{
   padding: 10px;
   border-radius: 50px;
   outline: none;
@@ -484,7 +529,10 @@ canvas {
   z-index: 1000;
   text-align: center;
   border-radius: 8px;
-  width: 400px;
+  width: calc((100vw + 100vh)/3);
+  justify-content: space-evenly;
+  border: 3px solid #ffac00;
+  overflow: hidden;
 }
 .popup img {
   max-width: 100%;
@@ -509,6 +557,8 @@ canvas {
   font-size: 16px;
   /* border: 1px solid #ccc; */
   border-radius: 0px;
+  position: relative;
+  z-index: 2;
 }
 .popup button {
   padding: 10px 20px;
@@ -518,6 +568,8 @@ canvas {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 .popup button:hover {
   background-color: #ffde9b;
@@ -533,18 +585,22 @@ canvas {
   font-size: 16px;
   border: 1px solid white;
   border-radius: 5px;
+  position: relative;
+  z-index: 2;
 }
 
 
 .img-box{
   position: relative;
+  width: calc(100vh/3);
+  z-index: 2;
 }
 .img-text{
 position: absolute;
-bottom: 25%;
-font-size: 20px;
+bottom: 20%;
+font-size: calc((100vh/3)/18);
 font-weight: bold;
-width: 350px;
+width: calc(100vh/4);
 left: 50%;
 transform: translateX(-50%);
 color: #db1919;
@@ -554,6 +610,26 @@ color: #db1919;
   color: black;
   font-size: 15px;
   bottom: 8%;
+}
+
+.phan-input{
+  width: 50%;
+}
+.text-huong-dan{
+  font-size:23px ;
+  text-transform: uppercase;
+  color: #ffac00;
+  margin-bottom: 20px;
+
+}
+.phan-input img{
+  position: absolute;
+  top: 45%;
+  right: 5%;
+  width: 40%;
+  transform: rotate(-10deg);
+  z-index: 0;
+  
 }
 
 
@@ -670,6 +746,20 @@ color: white;
 .filter .file-img.left2{
   width: 20%;
 }
+
+.popup{
+  width: auto;
+  flex-direction: column;
+  align-items: center;
+}
+.text-huong-dan,.phan-input img{
+  display: none;
+}
+.phan-input{
+  width: 100%;
+}
+
+
  /* end max <800  */
 }
 @media only screen and (max-width:500px){
@@ -681,13 +771,19 @@ color: white;
   .cau-chuc-cua{
     top: auto;
     bottom: 20%;
+    width: 45%;
     
   }
+  .cau-chuc{
+    font-size: 10px;
+    font-weight: 400;
+    color: #555555;
+  }
   .text-di-chuyen{
-    transform: translateX(-50%) translateY(120%);
+    transform: translateX(-50%) translateY(80%);
   }
   .loi-chuc{
-    font-size: 18px;
+    font-size: 14px;
   }
   .filter-ct{
     flex-direction: column;
@@ -706,13 +802,16 @@ color: white;
     width: 50%;
   }
   .form{
-    width: 80%;
+    width: 90%;
   }
   form{
     width: 90%;
   }
+  .form-title{
+    width: 80%;
+  }
   .popup{
-    width: 280px;
+    width: 300px;
     top: 0%;
     padding: 10px;
   }
@@ -722,9 +821,46 @@ color: white;
   }
   .img-text{
     width: 240px;
+    font-size: calc((100vh/3)/15);
   }
   .popup img{
     margin-bottom: 0;
+    width: 300px;
+  }
+  .img-box{
+    width: 250px;
+  }
+  .phan-input{
+    width: 250px;
+  }
+  .body{
+    margin-top: 30px;
+  }
+  .sub-slide{
+    min-width: 50vw;
+    margin-left: 0px;
+    border: 2px solid #ae1919;
+  }
+  .event-ct .ev-left{
+    width: 100%!important;
+  }
+  .ev-left .text1{
+    font-size: 16px;
+    width: 100%!;
+    margin-left: 0px;
+    margin-top: 5px;
+    text-align: center;
+  }
+  .event-ct{
+    margin: 0;
+    padding: 10px;
+    margin: auto;
+  }
+  .sl-loichuc, .sl-ten{
+    font-size: 13px;
+  }
+  .sl-ten{
+    font-size: 10px;
   }
   /* end resize  */
 }
