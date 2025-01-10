@@ -392,29 +392,7 @@ const canvas = document.getElementById("fireworksCanvas");
 
 
 
-            // lay du lieu form
-            function sendForm() {
-                // đem tất cả dữ liệu trong form id là 'google-form' gom thành biến data
-                let data = $('#google-form').serialize();
             
-                $.ajax({ //Sử dụng Ajax gửi dữ liệu đi
-                    url: 'https://script.google.com/macros/s/AKfycbw61IYR_xCwbID3ju2SSSsaoxMjrLmtGAfzVeK-Dy-WhkrjDVIYZfyR2LpD1rNibv9Iww/exec',
-                    method: 'GET',
-                    dataType: 'json',
-                    data: data,
-                    success: function(responseData, textStatus, jqXHR) {
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.log(errorThrown);
-                    }
-                });
-            
-                window.jQuery(this).trigger('reset');
-                alert('Đăng Ký Thành Công!');
-            
-                return true;
-            };
-
       
 
 
@@ -422,5 +400,27 @@ const canvas = document.getElementById("fireworksCanvas");
    // loaded all content   
  });
 
+// lay du lieu form
+function sendForm() {
+    // đem tất cả dữ liệu trong form id là 'google-form' gom thành biến data
+    let data = $('#google-form').serialize();
+
+    $.ajax({ //Sử dụng Ajax gửi dữ liệu đi
+        url: 'https://script.google.com/macros/s/AKfycbw61IYR_xCwbID3ju2SSSsaoxMjrLmtGAfzVeK-Dy-WhkrjDVIYZfyR2LpD1rNibv9Iww/exec',
+        method: 'GET',
+        dataType: 'json',
+        data: data,
+        success: function(responseData, textStatus, jqXHR) {
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown);
+        }
+    });
+
+    window.jQuery(this).trigger('reset');
+    alert('Đăng Ký Thành Công!');
+
+    return true;
+};
 
 
